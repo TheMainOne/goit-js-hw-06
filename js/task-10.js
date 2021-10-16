@@ -7,9 +7,10 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
+let counter = 0;
+
 const createBoxes = (amount) => {
   const boxes = [];
-  let counter = 0;
 
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement("div");
@@ -28,6 +29,7 @@ const createNewBoxes = () => createBoxes(input.value);
 
 const destroyAllBoxes = () => {
   storageForNewBoxes.innerHTML = "";
+  counter = 0;
 };
 
 createBoxButton.addEventListener("click", createNewBoxes);
