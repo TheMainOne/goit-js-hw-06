@@ -2,7 +2,10 @@ const input = document.querySelector("input[data-length]");
 
 const onValidInputValue = (event) => {
   event.currentTarget.classList.add("valid");
-  if (event.currentTarget.value.length >= 6) {
+  if (
+    event.currentTarget.value.length ===
+    Number(event.currentTarget.dataset.length)
+  ) {
     event.currentTarget.classList.add("valid");
     event.currentTarget.classList.replace("invalid", "valid");
   } else {
